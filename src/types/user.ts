@@ -1,9 +1,9 @@
 import {Torrent} from "./torrent";
 
 export class User {
-    public token?: string;
-    public username?: string;
-    public admin?: boolean;
+    public token: string;
+    public username: string;
+    public admin: boolean;
 
     public hasEditRightsForTorrent(torrent: Torrent) {
         return this.admin || this.username === torrent.uploader;

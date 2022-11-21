@@ -8,5 +8,6 @@
     "lib":["DOM", "ES2015", "ES5", "ES6"],
     "strict": true,
     "noImplicitAny": true,
+    "strictPropertyInitialization": false,
   }
 }

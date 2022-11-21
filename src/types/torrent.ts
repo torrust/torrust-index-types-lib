@@ -1,17 +1,17 @@
 export class Torrent {
-    torrent_id?: number;
-    uploader?: string;
-    info_hash?: string;
-    title?: string;
-    description?: string;
-    category?: TorrentCategory;
-    upload_date?: string;
-    file_size?: number;
-    seeders?: number;
-    leechers?: number;
-    files?: Array<TorrentFile>;
-    trackers?: Array<string>;
-    magnet_link?: string;
+    torrent_id: number;
+    uploader: string;
+    info_hash: string;
+    title: string;
+    description: string;
+    category: TorrentCategory;
+    upload_date: string;
+    file_size: number;
+    seeders: number;
+    leechers: number;
+    files: Array<TorrentFile>;
+    trackers: Array<string>;
+    magnet_link: string;
 }
 
 export type TorrentCategory = {
