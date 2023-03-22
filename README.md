@@ -1,3 +1,5 @@
+# Torrust Index Interface Types
+
 A simple TypeScript/ES6 library that contains all common types used by the Torrust Index project.
 
 ## Install
