@@ -33,6 +33,11 @@ export type TorrentCategory = {
     num_torrents: number
 }
 
+export type TorrentTag = {
+    tag_id: number
+    name: string
+}
+
 export type TorrentFile = {
     path: Array<string>
     length: number
