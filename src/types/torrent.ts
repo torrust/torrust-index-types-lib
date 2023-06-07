@@ -12,6 +12,7 @@ export type Torrent = {
     files: Array<TorrentFile>
     trackers: Array<string>
     magnet_link: string
+    tags: Array<TorrentTag>
 }
 
 export type TorrentCompact = {
