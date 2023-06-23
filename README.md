@@ -1,5 +1,7 @@
 # Torrust Index Interface Types
 
+[![Test](https://github.com/torrust/torrust-index-types-lib/actions/workflows/test.yml/badge.svg)](https://github.com/torrust/torrust-index-types-lib/actions/workflows/test.yml)
+
 A simple TypeScript/ES6 library that contains all common types used by the [Torrust Index project](https://github.com/torrust/torrust-index).
 
 ## Install
