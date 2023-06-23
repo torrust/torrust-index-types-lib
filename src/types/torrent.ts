@@ -1,10 +1,13 @@
-export type Torrent = {
+import { Category } from "./category";
+import { TorrentTag } from "./tag";
+
+export type TorrentResponse = {
     torrent_id: number
     uploader: string
     info_hash: string
     title: string
-    description: string
-    category: TorrentCategory
+    description: string | null
+    category: Category
     upload_date: string
     file_size: number
     seeders: number
@@ -15,32 +18,21 @@ export type Torrent = {
     tags: Array<TorrentTag>
 }
 
-export type TorrentCompact = {
-    category_id: number
-    date_uploaded: string
-    description: string
-    file_size: number
-    info_hash: string
-    leechers: number
-    seeders: number
-    title: string
+export type TorrentListing = {
     torrent_id: number
     uploader: string
-}
-
-export type TorrentCategory = {
+    info_hash: string
+    title: string
+    description: string | null
     category_id: number
-    name: string
-    num_torrents: number
-}
-
-export type TorrentTag = {
-    tag_id: number
-    name: string
+    date_uploaded: string
+    file_size: number
+    leechers: number
+    seeders: number
 }
 
 export type TorrentFile = {
     path: Array<string>
     length: number
-    md5sum: number
+    md5sum: string | null
 }
