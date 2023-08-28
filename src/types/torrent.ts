@@ -16,6 +16,7 @@ export type TorrentResponse = {
     trackers: Array<string>
     magnet_link: string
     tags: Array<TorrentTag>
+    name: string
 }
 
 export type TorrentListing = {
@@ -29,6 +30,7 @@ export type TorrentListing = {
     file_size: number
     leechers: number
     seeders: number
+    name: string
 }
 
 export type TorrentFile = {
