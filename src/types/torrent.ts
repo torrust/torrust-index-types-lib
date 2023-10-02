@@ -17,6 +17,7 @@ export type TorrentResponse = {
     magnet_link: string
     tags: Array<TorrentTag>
     name: string
+    comment: string | null
 }
 
 export type TorrentListing = {
@@ -31,6 +32,7 @@ export type TorrentListing = {
     leechers: number
     seeders: number
     name: string
+    comment: string | null
 }
 
 export type TorrentFile = {
