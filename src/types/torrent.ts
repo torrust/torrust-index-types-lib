@@ -18,6 +18,9 @@ export type TorrentResponse = {
     tags: Array<TorrentTag>
     name: string
     comment: string | null
+    creation_date: number | null;
+    created_by: string | null;
+    encoding: string | null;
 }
 
 export type TorrentListing = {
@@ -33,6 +36,9 @@ export type TorrentListing = {
     seeders: number
     name: string
     comment: string | null
+    creation_date: number | null;
+    created_by: string | null;
+    encoding: string | null;
 }
 
 export type TorrentFile = {
