@@ -21,6 +21,7 @@ export type TorrentResponse = {
     creation_date: number | null;
     created_by: string | null;
     encoding: string | null;
+    canonical_info_hash_group: Array<string>;
 }
 
 export type TorrentListing = {
