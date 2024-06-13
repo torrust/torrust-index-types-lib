@@ -1,51 +1,71 @@
 export type Settings = {
+    logging: Logging,
+    website: Website,
+    tracker: Tracker,
+    net: Network,
+    auth: Auth,
+    database: Database,
+    mail: Mail,
+    image_cache: ImageCache,
+    api: Api,
+    tracker_statistics_importer: TrackerStatisticsImporter
+}
+
+export type Logging = {
     log_level: LogLevel,
-    website: {
-        name: string
-    },
-    tracker: {
-        url: string
-        mode: TrackerMode
-        api_url: string
-        token: string
-        token_valid_seconds: number
-    },
-    net: {
-        port: number
-        base_url: string | null
-    },
-    auth: {
-        email_on_signup: EmailOnSignup
-        min_password_length: number
-        max_password_length: number
-        secret_key: string
-    },
-    database: {
-        connect_url: string
-    },
-    mail: {
-        email_verification_enabled: boolean
-        from: string
-        reply_to: string
-        username: string
-        password: string
-        server: string
-        port: number
-    },
-    image_cache: {
-        max_request_timeout_ms: number
-        capacity: number
-        entry_size_limit: number
-        user_quota_period_seconds: number
-        user_quota_bytes: number
-    },
-    api: {
-        default_torrent_page_size: number
-        max_torrent_page_size: number
-    },
-    tracker_statistics_importer: {
-        torrent_info_update_interval: number
-    }
+}
+
+export type Website = {
+    name: string
+}
+
+export type Tracker = {
+    api_url: string
+    mode: TrackerMode
+    token: string
+    token_valid_seconds: number
+    url: string
+}
+
+export type Network = {
+    base_url: string | null
+    bind_address: string
+    tsl: Tsl | null
+}
+
+export type Auth = {
+    email_on_signup: EmailOnSignup
+    secret_key: string
+    password_constraints: PasswordConstraints
+}
+
+export type Database = {
+    connect_url: string
+}
+
+export type Mail = {
+    email_verification_enabled: boolean
+    from: string
+    reply_to: string
+    smtp: Smtp
+}
+
+export type ImageCache = {
+    capacity: number
+    entry_size_limit: number
+    max_request_timeout_ms: number
+    user_quota_bytes: number
+    user_quota_period_seconds: number
+}
+
+export type Api = {
+    default_torrent_page_size: number
+    max_torrent_page_size: number
+}
+
+export type TrackerStatisticsImporter = {
+    port: number
+    torrent_info_update_interval: number
 }
 
 export type PublicSettings = {
@@ -55,24 +75,45 @@ export type PublicSettings = {
     email_on_signup: EmailOnSignup
 }
 
+export type Tsl = {
+    ssl_cert_path: string | null
+    ssl_key_path: string | null
+}
+
+export type PasswordConstraints = {
+    max_password_length: number
+    min_password_length: number
+}
+
+export type Smtp = {
+    port: number
+    server: string
+    credentials: Credentials
+}
+
+export type Credentials = {
+    password: string
+    username: string
+}
+
 export enum TrackerMode {
-    Public,
-    Private,
-    Whitelisted,
-    PrivateWhitelisted
+    Public = "public",
+    Listed = "listed",
+    Private = "private",
+    PrivateListed = "private_listed"
 }
 
 export enum EmailOnSignup {
-    Required,
-    Optional,
-    None
+    Required = "required",
+    Optional = "optional",
+    Ignored = "ignored"
 }
 
 export enum LogLevel {
-    Off,
-    Error,
-    Warn,
-    Info,
-    Debug,
-    Trace
+    Off = "off",
+    Error = "error",
+    Warn = "warn",
+    Info = "info",
+    Debug = "debug",
+    Trace = "trace",
 }
