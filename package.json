@@ -2,8 +2,11 @@
   "name": "torrust-index-types-lib",
   "version": "3.0.0-alpha.1",
   "description": "Contains common types for the Torrust project.",
-  "repository": "https://github.com/torrust/torrust-index-types-lib",
-  "license" : "SEE LICENSE IN COPYRIGHT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torrust/torrust-index-types-lib.git"
+  },
+  "license": "SEE LICENSE IN COPYRIGHT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
