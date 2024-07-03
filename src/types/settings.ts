@@ -1,4 +1,5 @@
 export type Settings = {
+    version: string,
     logging: Logging,
     website: Website,
     tracker: Tracker,
@@ -12,7 +13,7 @@ export type Settings = {
 }
 
 export type Logging = {
-    log_level: LogLevel,
+    threshold: Threshold,
 }
 
 export type Website = {
@@ -21,7 +22,8 @@ export type Website = {
 
 export type Tracker = {
     api_url: string
-    mode: TrackerMode
+    listed: boolean
+    private: boolean
     token: string
     token_valid_seconds: number
     url: string
@@ -71,7 +73,8 @@ export type TrackerStatisticsImporter = {
 export type PublicSettings = {
     website_name: string
     tracker_url: string
-    tracker_mode: TrackerMode
+    tracker_listed: boolean
+    tracker_private: boolean
     email_on_signup: EmailOnSignup
 }
 
@@ -96,20 +99,13 @@ export type Credentials = {
     username: string
 }
 
-export enum TrackerMode {
-    Public = "public",
-    Listed = "listed",
-    Private = "private",
-    PrivateListed = "private_listed"
-}
-
 export enum EmailOnSignup {
     Required = "required",
     Optional = "optional",
     Ignored = "ignored"
 }
 
-export enum LogLevel {
+export enum Threshold {
     Off = "off",
     Error = "error",
     Warn = "warn",
