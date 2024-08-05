@@ -3,13 +3,19 @@ export type Settings = {
     logging: Logging,
     website: Website,
     tracker: Tracker,
-    net: Network,
+    net: Net,
     auth: Auth,
     database: Database,
     mail: Mail,
     image_cache: ImageCache,
     api: Api,
     tracker_statistics_importer: TrackerStatisticsImporter
+}
+
+export type Metadata = {
+    app: string,
+    purpose: string,
+    schema_version: string,
 }
 
 export type Logging = {
@@ -29,7 +35,7 @@ export type Tracker = {
     url: string
 }
 
-export type Network = {
+export type Net = {
     base_url: string | null
     bind_address: string
     tsl: Tsl | null
@@ -37,7 +43,7 @@ export type Network = {
 
 export type Auth = {
     email_on_signup: EmailOnSignup
-    secret_key: string
+    user_claim_token_pepper: string
     password_constraints: PasswordConstraints
 }
 
@@ -46,7 +52,6 @@ export type Database = {
 }
 
 export type Mail = {
-    email_verification_enabled: boolean
     from: string
     reply_to: string
     smtp: Smtp
@@ -63,6 +68,10 @@ export type ImageCache = {
 export type Api = {
     default_torrent_page_size: number
     max_torrent_page_size: number
+}
+
+export type Registration = {
+    email: Email
 }
 
 export type TrackerStatisticsImporter = {
@@ -112,4 +121,9 @@ export enum Threshold {
     Info = "info",
     Debug = "debug",
     Trace = "trace",
+}
+
+export type Email = {
+    required: boolean
+    verification_required: boolean
 }
