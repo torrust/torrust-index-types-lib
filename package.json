@@ -1,6 +1,6 @@
 {
   "name": "torrust-index-types-lib",
-  "version": "3.0.0-alpha.12",
+  "version": "3.0.0-beta",
   "description": "Contains common types for the Torrust project.",
   "repository": {
     "type": "git",
