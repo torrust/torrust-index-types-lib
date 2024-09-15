@@ -24,6 +24,26 @@ export type Logging = {
 
 export type Website = {
     name: string
+    demo: Demo | null
+    terms: Terms
+}
+
+export type Demo = {
+    warning: string
+}
+
+export type Terms = {
+    page: TermsPage
+    upload: TermsUpload
+}
+
+export type TermsPage = {
+    title: string
+    content: string
+}
+
+export type TermsUpload = {
+    content_upload_agreement: string
 }
 
 export type Tracker = {
@@ -85,6 +105,7 @@ export type PublicSettings = {
     tracker_listed: boolean
     tracker_private: boolean
     email_on_signup: EmailOnSignup
+    website: Website
 }
 
 export type Tsl = {
